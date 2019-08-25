@@ -1,0 +1,43 @@
+- init.php
+    - templates vars
+    - theme vars
+    - langs
+
+
+- en.php
+    function lang($phrase)
+    {
+        static $lang = ['key' => 'value'];
+
+        return $lang[$phrase];
+    }
+- database connection:
+    - connect.php | conf.php(all settings) | ..  then put it in the init.php file
+
+- pdo :
+    $stmt = $con->prepare("SELECT username, password from users where username = ? and password = ? "); :zuser, z:mail
+    $stmt->execute([$username, $hashedPass]) key value if ..
+    $stmt->bindParam("zuser", $userid)
+    $row = $stmt->fetch();
+    $count = $stmt->rowCount():
+    - $stmt->fetchAll()
+    - fetchColumn()
+
+
+   if($count==1) {
+        $session..
+        header..
+        exit();
+   }
+
+   - session:
+    sessionstart
+    sessionunset
+    sessiondestroy
+
+- 404 page
+
+ini_set('display_erros', 'On')
+error_reporting(E_ALL);
+$_FILES
+move_uploaded_file

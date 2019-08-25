@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dore jQuery</title>
+    <title><?php echo isset($title) ? $title : $generalSettings['site_title']?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="<?php echo $generalSettings['site_keywords'] ?>">
+    <meta name="description" content="<?php echo $generalSettings['site_description']?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/public/font/iconsmind/style.css" />

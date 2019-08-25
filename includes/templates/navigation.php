@@ -21,16 +21,25 @@
             </svg>
         </a>
 
-        <div class="search" data-search-path="Layouts.Search.html?q=">
-            <input placeholder="Search...">
-            <span class="search-icon">
+        <div class="search" data-search-path="/search.php">
+            <form method="POST" action="/search.php">
+                <input name="search" placeholder="Search..." value="<?php  echo @$_SESSION['search_query']?>">
+                <span class="search-icon">
                     <i class="simple-icon-magnifier"></i>
                 </span>
+            </form>
         </div>
     </div>
 
+    <?php
+        if(isset($_POST['search'])) {
+            $_SESSION['search_query'] = $_POST['search'];
+            header("location: {$generalSettings['site_url']}/search.php");
+        }
+    ?>
 
-    <a class="navbar-logo" href="/">
+
+    <a class="navbar-logo" href="<?php echo $generalSettings['site_url']?>">
         <span class="logo d-none d-xs-block"></span>
         <span class="logo-mobile d-block d-xs-none"></span>
     </a>
