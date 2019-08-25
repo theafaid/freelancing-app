@@ -20,3 +20,4 @@
 </head>
 
 <body id="app-container" class="menu-default show-spinner">
+<?php echo trans('hello') ?>
